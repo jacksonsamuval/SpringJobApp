@@ -16,6 +16,7 @@
 	crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="style.css">
 <link rel="stylesheet" type="text/css" href="style1.css">
+
 <style>
 h2 {
 	font-size: 16px;
@@ -28,7 +29,7 @@ p {
 }
 
  .bg-clr{
-        background-color:#f1faee;
+        background-color:#ffc107;
         }
  
         
@@ -61,12 +62,12 @@ p {
 	</nav>
 
 	<div class="container mt-5">
-		<div class="row">
+		<div class="row" style="justify-content: center;">
 			<!-- Card 1 -->
 			<div class="col-md-6 mb-5">
-				<div class="card bg-warning">
+				<div class="card bg-warning" style="background-color: white !importand">
 					<div class="card-body text-center">
-						<h5 class="card-title">View AllJobs</h5>
+						<h5 class="card-title">View All Jobs</h5>
 						<form action="/viewalljobs" method="get">
 							<!-- Add your form fields here -->
 							<button type="submit" class="btn btn-primary">Press Here</button>
@@ -75,9 +76,10 @@ p {
 				</div>
 			</div>
 
+			
 			<!-- Card 2 -->
 			<div class="col-md-6 mb-5">
-				<div class="card">
+				<div class="card" style="background-color: white">
 					<div class="card-body text-center">
 						<h5 class="card-title">Add Job</h5>
 						<form action="/addjob" method="get">
@@ -89,7 +91,19 @@ p {
 					</div>
 				</div>
 			</div>
-			
+						<!-- Card 1 -->
+						<div class="col-md-6 mb-5">
+							<div class="card bg-warning" style="background-color: white !importand">
+								<div class="card-body text-center">
+									<h5 class="card-title">View Applied Jobs</h5>
+									<form action="/viewappliedjobs" method="get">
+										<!-- Add your form fields here -->
+										<button type="submit" class="btn btn-primary">Press Here</button>
+									</form>
+								</div>
+							</div>
+						</div>
+
 				
 		</div>
 	</div>

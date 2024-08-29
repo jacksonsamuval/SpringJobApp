@@ -63,5 +63,6 @@ public class JobPost {
 	{
 		System.out.println("in job add method");
 	}
+	
 
 }

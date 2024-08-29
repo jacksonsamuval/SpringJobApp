@@ -60,10 +60,7 @@
 	        <div class="card border-dark bg-dark text-white">
 	            <div class="card-body">
 	                <h5 class="card-title"> ${Jobpost.postProfile} </h5>
-	                <p class="card-text">
-	                    <strong>Job-Id:</strong>
-	                    ${Jobpost.postId}
-	                </p>
+	               
 	                <p class="card-text">
 	                    <strong>Description:</strong>
 						${Jobpost.postDesc}

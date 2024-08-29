@@ -17,38 +17,60 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-warning">
-    <div class="container">
-        <a class="navbar-brand fs-1 fw-medium" href="#">Telusko Job Portal Web App</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="home">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="viewalljobs">All Jobs</a></li>
-                <li class="nav-item"><a class="nav-link" href="/">Contact</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
+	<body>
+	    <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+	        <div class="container">
+	            <a class="navbar-brand fs-1 fw-medium" href="#">Jackson Job Portal Web App</a>
+	            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+	                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+	                <span class="navbar-toggler-icon"></span>
+	            </button>
+	            <div class="collapse navbar-collapse" id="navbarNav">
+	                <ul class="navbar-nav ms-auto d-flex align-items-center">
+	                    <!-- Search Form -->
+	                    <li class="nav-item">
+	                        <form class="d-flex navbar-search-form" action="search" method="get">
+	                            <input class="form-control me-2" type="search" name="search" placeholder="Search for job posts..." aria-label="Search">
+	                            <button class="btn btn-outline-dark" type="submit" style="background-color:black; color:white">Search</button>
+	                        </form>
+	                    </li>
+	                    <!-- Navigation Links -->
+	                    <li class="nav-item">
+	                        <a class="nav-link" href="/home">Home</a>
+	                    </li>
+	                    <li class="nav-item">
+	                        <a class="nav-link" href="viewalljobs">All Jobs</a>
+	                    </li>
+	                    <li class="nav-item">
+	                        <a class="nav-link" href="/">Contact</a>
+	                    </li>
+	                </ul>
+	            </div>
+	        </div>
+	    </nav>
 
-<ab:set var="JobPost" value="${JobPost}" />
+	    <!-- Scripts for Bootstrap -->
+	    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 
-<div class="container mt-5">
-    <h2 class="mb-4 text-center font-weight-bold">Job Post List</h2>
+<ab:set var="submitForm" value="${JobPost}" />
 
-    <div class="row row-cols-2">
+    <h2 class="mb-4 text-center font-weight-bold" style="margin-top:20px">Job Post List</h2>
+
+    <div class="row row-cols-2"  style="flex-direction: column; align-items: center">
         <ab:forEach var="JobPost" items="${JobPost}">
             <div class="col mb-4">
                 <div class="card border-dark bg-dark text-white">
                     <div class="card-body">
                         <h5 class="card-title"></h5>
 						<p class="card-text">
+							<form action="jobapply/${JobPost.postId}" method="get">
 						                           <strong>Job-Id: </strong>
 						                          ${JobPost.postId}
 						                       </p>
+											   <p class="card-text">
+											   	<strong>Job-Profile: </strong>
+											   	 ${JobPost.postProfile}
+											   </p>
 						                       <p class="card-text">
 						                           <strong>Description:</strong>
 												${JobPost.postDesc}
@@ -65,6 +87,8 @@
 						                               </ab:forEach>
 						                           </ul>
 						                       </p>
+											   <button type="submit" class="btn btn-primary">Apply</button>
+											   	</form>
                     </div>
                     <div class="card-footer">
                         <!-- Optional footer content -->

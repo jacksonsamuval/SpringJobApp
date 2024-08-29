@@ -15,8 +15,8 @@
 		rel="stylesheet"
 		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
 		crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="stylesheet" type="text/css" href="style1.css">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" type="text/css" href="style1.css">
 	<style>
 	h2 {
 		font-size: 16px;
@@ -62,11 +62,7 @@
 							<h2 class="mb-3 text-center fs-3 font-weight-bold">Post a new
 								Job</h2>
 							<form:form action="handleForm" method="post" modelAttribute="jobPost">
-								<div class="mb-1">
-									<label for="postId" class="form-label">Post ID</label> <input
-										type="text" class="form-control" id="postId" name="postId"
-										required>
-								</div>
+								
 	
 								<div class="mb-1">
 									<label for="postProfile" class="form-label">Post Profile</label>
